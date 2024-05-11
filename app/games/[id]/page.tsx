@@ -1,5 +1,6 @@
 import { fetchGame } from "@/app/lib/data";
 import BookMark from "@/app/ui/bookmark";
+import Image from "next/image";
 
 type GameData = {
   name: string;
@@ -50,11 +51,18 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <div className="mx-auto max-w-7xl py-20 sm:grid sm:grid-cols-2 sm:grid-rows-[repeat(4,_auto)_1fr] sm:gap-x-12 sm:gap-y-3 sm:p-4 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_1fr]">
       <div className="mx-auto max-w-96 sm:row-span-3 sm:mx-0 sm:max-w-none">
-        <img
+        <Image
+          src={data.background_image}
+          className="h-full object-cover"
+          width={500}
+          height={480}
+          alt=""
+        />
+        {/* <img
           className="h-full object-cover"
           src={data.background_image}
           alt=""
-        />
+        /> */}
       </div>
       <div className="flex gap-4 sm:col-start-2">
         <h1 className="text-center text-4xl font-bold lg:text-left">
