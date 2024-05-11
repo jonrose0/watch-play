@@ -1,10 +1,8 @@
-"use client";
-
 import clsx from "clsx";
 import { useDebouncedCallback } from "use-debounce";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-export default function filterDate({ open }: { open: boolean }) {
+export default function FilterDate({ open }: { open: boolean }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
