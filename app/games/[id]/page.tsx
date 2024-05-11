@@ -120,9 +120,9 @@ export default async function Page({ params }: { params: { id: string } }) {
           where to play
         </h2>
         <div className="flex flex-wrap gap-4">
-          {data.stores.map((s) => {
+          {data.stores.map((s, index) => {
             return (
-              <a href={`https://${s.store.domain}`} target="_blank">
+              <a key={index} href={`https://${s.store.domain}`} target="_blank">
                 {s.store.name}
               </a>
             );
@@ -132,8 +132,12 @@ export default async function Page({ params }: { params: { id: string } }) {
       <div className="sm:row-start-5 lg:col-start-2 lg:row-span-2 lg:row-start-3 lg:mt-0">
         <h2 className="text-center text-2xl font-bold lg:hidden">overview</h2>
         <div className="grid gap-4">
-          {desc.map((para) => {
-            return <p className="indent-8 leading-7">{para}</p>;
+          {desc.map((para, index) => {
+            return (
+              <p key={index} className="indent-8 leading-7">
+                {para}
+              </p>
+            );
           })}
         </div>
       </div>

@@ -14,9 +14,9 @@ export default function Provider({
         <p>{type}:</p>{" "}
         <div className="flex flex-wrap gap-4">
           {provider &&
-            provider.map((item) => {
+            provider.map((item, index) => {
               return (
-                <div className="max-w-12">
+                <div key={index} className="max-w-12">
                   <img
                     src={`http://image.tmdb.org/t/p/w342${item.logo_path}`}
                     alt=""
